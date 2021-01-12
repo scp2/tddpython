@@ -46,8 +46,7 @@ class PlayList:
         self.nome = nome
         self._programas = programas
 
-    @property
-    def tamanho(self):
+    def __len__(self):
         return len(self._programas)
 
     @property
@@ -56,6 +55,9 @@ class PlayList:
 
     def __iter__(self):
         return iter(self._programas)
+
+    def __getitem__(self, item):
+        return self._programas[item]
 
 
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
